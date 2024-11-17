@@ -1,8 +1,18 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
+import Home from './pages/Home';
+import Token from './pages/Token';
+
 function App() {
   return (
-    <h1 className="text-3xl font-bold">
-      Welcome to Whale-App
-    </h1>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="tokens/:token" element={<Token />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
