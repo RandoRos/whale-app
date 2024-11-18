@@ -1,50 +1,23 @@
-# React + TypeScript + Vite
+# WhaleApp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a basic UI app for interracting with [whale-api](https://github.com/RandoRos/whale-api) backend server.
+It shows list of supported tokens and allows to open each individual details.
 
-Currently, two official plugins are available:
+Implementation wise it is using `React + Vite Typescript` with `React-Query` and `React-Router`. For styling `TailwindCSS` and testing is done using `Vitest` and `React-Testing-Libary`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This App if very bearbones and does not have lot of functionality, as it was not required.
 
-## Expanding the ESLint configuration
+#### Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+`react`  `typescript`  `react-query`  `react-router`  `tailwindcss`  `vite`  `vitest`  `react-testing-library`
 
-- Configure the top-level `parserOptions` property like this:
+### Variables
+Need to create `.env` file into project `<root>` directory
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- VITE_API_KEY - `required`, API auth header token
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Running
+1. run command `npm install`
+2. create `.env`file
+3. run command `npm run dev`
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
