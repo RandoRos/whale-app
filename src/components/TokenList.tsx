@@ -18,8 +18,8 @@ export default function TokenList() {
         </tr>
       </thead>
       <tbody>
-        {tokens?.map(({ token, price, currency }) => (
-          <TokenListItem token={token} price={price} currency={currency} />
+        {tokens?.map(({ token, price, currency }, idx) => (
+          <TokenListItem key={`${token}-${idx}`} token={token} price={price} currency={currency} />
         ))}
       </tbody>
     </table>
